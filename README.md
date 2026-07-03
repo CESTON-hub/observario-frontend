@@ -18,8 +18,17 @@ Documentación de arquitectura del proyecto: [CESTON-hub/docs-observatorio](http
 |---|---|
 | Pantalla inicial | Login / registro estilo Ramp (`src/components/AuthScreen.tsx`). Bloquea el acceso hasta iniciar sesión o crear cuenta. |
 | `/` | Hero con buscador y búsquedas populares, barra de stats, categorías por sector, indicador destacado con gráfico |
-| `/indicadores` | KPIs, filtros por categoría/período/región, grilla de indicadores con sparklines y búsqueda en vivo |
-| `/dashboard` | Resumen ejecutivo: KPIs, energía y capital humano por región, mapa de cobertura por regiones, evolución de la matriz energética, lista de indicadores destacados |
+| `/buscar` | **CU-01** — Buscador de capacidades ("mini-Google"): interpreta la intención (contratar/investigar/financiación/territorio), recomienda entidades rankeadas con justificación y contacto |
+| `/organizaciones/[id]` | **CU-05 + CU-18** — Perfil de organización (capacidades, líneas, proyectos, contacto) con flujo de reclamar perfil censado y confirmar datos vigentes |
+| `/registro` | **CU-03** — Wizard de registro de organización por tipo de actor (5 pasos), termina en la cola de validación |
+| `/indicadores` | **CU-06 + CU-07** — KPIs, filtros, sparklines, búsqueda en vivo y exportación CSV de las series visibles |
+| `/dashboard` | **CU-02** — Resumen ejecutivo: KPIs, barras por región, mapa de cobertura, matriz energética, destacados |
+| `/convocatorias` | **CU-19** — Becas, financiación, proyectos e incentivos filtrables por tipo y estado (abierta/cerrada por fecha) |
+| `/publicaciones` | **CU-08 + CU-09** — Marco metodológico, boletines y generador de perfiles territoriales descargables |
+| `/experiencias` | **CU-10** — Banco de buenas prácticas con botones de salto analítico al dashboard |
+| `/admin/validacion` | **CU-11** — Cola de validación human-in-the-loop (rol analista): ítems del autoregistro y del ETL/IA con fuente original y confianza, aprobar/rechazar |
+
+Los códigos CU-XX corresponden a los casos de uso de [docs-observatorio/docs/arquitectura/casos-de-uso.md](https://github.com/CESTON-hub/docs-observatorio/blob/main/docs/arquitectura/casos-de-uso.md). El directorio de demo y el motor de búsqueda por intención viven en [`src/lib/directorio.ts`](src/lib/directorio.ts); los reclamos, registros y decisiones de validación persisten en `localStorage`.
 
 ## Autenticación (solo frontend)
 

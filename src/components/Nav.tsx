@@ -7,9 +7,12 @@ import { AciemLogo } from "./AciemLogo";
 import { useAuth } from "@/lib/auth";
 
 const links = [
-  { href: "/", label: "Inicio" },
+  { href: "/buscar", label: "Buscador" },
   { href: "/indicadores", label: "Indicadores" },
   { href: "/dashboard", label: "Dashboard" },
+  { href: "/convocatorias", label: "Convocatorias" },
+  { href: "/publicaciones", label: "Publicaciones" },
+  { href: "/experiencias", label: "Experiencias" },
 ];
 
 function iniciales(nombre: string) {
@@ -40,11 +43,28 @@ function MenuUsuario() {
             onClick={() => setAbierto(false)}
             tabIndex={-1}
           />
-          <div role="menu" className="absolute right-0 z-50 mt-2 w-56 rounded-xl border border-black/8 bg-white p-1.5 shadow-lg">
+          <div role="menu" className="absolute right-0 z-50 mt-2 w-60 rounded-xl border border-black/8 bg-white p-1.5 shadow-lg">
             <div className="px-2.5 py-2">
               <p className="truncate text-sm font-semibold text-navy">{usuario.nombre}</p>
               <p className="truncate text-xs text-navy/50">{usuario.email}</p>
             </div>
+            <div className="my-1 h-px bg-black/6" />
+            <Link
+              role="menuitem"
+              href="/registro"
+              onClick={() => setAbierto(false)}
+              className="block w-full rounded-lg px-2.5 py-2 text-left text-sm font-medium text-navy/80 hover:bg-black/5"
+            >
+              🏢 Registrar mi organización
+            </Link>
+            <Link
+              role="menuitem"
+              href="/admin/validacion"
+              onClick={() => setAbierto(false)}
+              className="block w-full rounded-lg px-2.5 py-2 text-left text-sm font-medium text-navy/80 hover:bg-black/5"
+            >
+              ✅ Cola de validación (analista)
+            </Link>
             <div className="my-1 h-px bg-black/6" />
             <button
               role="menuitem"
@@ -206,6 +226,12 @@ export function Nav() {
                   <p className="truncate text-xs text-navy/50">{usuario.email}</p>
                 </div>
               </div>
+              <Link href="/registro" className="mt-3 block rounded-lg px-3 py-2.5 text-sm font-medium text-navy/80 hover:bg-black/5">
+                🏢 Registrar mi organización
+              </Link>
+              <Link href="/admin/validacion" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-navy/80 hover:bg-black/5">
+                ✅ Cola de validación (analista)
+              </Link>
               <CerrarSesionMovil />
             </div>
           )}

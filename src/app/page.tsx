@@ -17,7 +17,7 @@ export default function Home() {
             El Observatorio de ACIEM centraliza indicadores técnicos, estadísticas sectoriales y análisis
             sobre ingeniería, energía e infraestructura nacional.
           </p>
-          <form action="/indicadores" className="mx-auto mt-10 max-w-xl">
+          <form action="/buscar" className="mx-auto mt-10 max-w-xl">
             <div className="relative">
               <svg className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white/40" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                 <circle cx="11" cy="11" r="7" />
@@ -33,7 +33,7 @@ export default function Home() {
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
             <span className="text-xs text-white/30">Populares:</span>
             {busquedasPopulares.map((b) => (
-              <Link key={b} href={`/indicadores?q=${encodeURIComponent(b)}`} className="font-medium text-white/60 underline underline-offset-4 hover:text-white">
+              <Link key={b} href={`/buscar?q=${encodeURIComponent(b)}`} className="font-medium text-white/60 underline underline-offset-4 hover:text-white">
                 {b}
               </Link>
             ))}

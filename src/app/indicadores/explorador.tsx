@@ -8,6 +8,24 @@ import { IndicadorCard } from "@/components/cards";
 const normalizar = (s: string) =>
   s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
+// CU-07: exportación de las series visibles a CSV.
+function descargarCSV(lista: typeof indicadores) {
+  const filas = [["indicador", "categoria", "unidad", "anio", "valor"]];
+  for (const ind of lista) {
+    for (const p of ind.serie) {
+      filas.push([ind.nombre, ind.categoriaNombre, ind.unidad, String(p.anio), String(p.valor)]);
+    }
+  }
+  const csv = filas.map((f) => f.map((c) => `"${c.replaceAll('"', '""')}"`).join(",")).join("\n");
+  const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "indicadores-observatorio-aciem.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export function ExploradorIndicadores() {
   const params = useSearchParams();
   const [categoria, setCategoria] = useState(params.get("categoria") ?? "todas");
@@ -79,16 +97,26 @@ export function ExploradorIndicadores() {
 
       {/* Resultados */}
       <div>
-        <div className="mb-4 flex items-center justify-between gap-4">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm font-semibold text-navy">
             {visibles.length} {visibles.length === 1 ? "indicador" : "indicadores"}
           </p>
-          <input
-            value={consulta}
-            onChange={(e) => setConsulta(e.target.value)}
-            placeholder="Buscar indicador..."
-            className="h-9 w-56 rounded-full border border-black/8 bg-white px-4 text-sm text-navy outline-none placeholder:text-navy/35 focus:border-navy/25"
-          />
+          <div className="flex items-center gap-2">
+            <input
+              value={consulta}
+              onChange={(e) => setConsulta(e.target.value)}
+              placeholder="Buscar indicador..."
+              className="h-9 w-48 rounded-full border border-black/8 bg-white px-4 text-sm text-navy outline-none placeholder:text-navy/35 focus:border-navy/25 sm:w-56"
+            />
+            <button
+              onClick={() => descargarCSV(visibles)}
+              disabled={visibles.length === 0}
+              className="h-9 rounded-full border border-black/8 bg-white px-4 text-sm font-medium text-navy hover:bg-black/5 disabled:opacity-40"
+              title="Exportar las series visibles en CSV"
+            >
+              ⬇ CSV
+            </button>
+          </div>
         </div>
         {visibles.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-black/12 bg-white p-12 text-center text-sm text-navy/50">
