@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
+import { AuthProvider } from "@/lib/auth";
+import { AuthGate } from "@/components/AuthGate";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -20,9 +20,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es" className={`${dmSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <AuthGate>{children}</AuthGate>
+        </AuthProvider>
       </body>
     </html>
   );

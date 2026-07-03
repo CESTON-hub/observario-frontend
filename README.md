@@ -16,9 +16,19 @@ Documentación de arquitectura del proyecto: [CESTON-hub/docs-observatorio](http
 
 | Ruta | Contenido |
 |---|---|
+| Pantalla inicial | Login / registro estilo Ramp (`src/components/AuthScreen.tsx`). Bloquea el acceso hasta iniciar sesión o crear cuenta. |
 | `/` | Hero con buscador y búsquedas populares, barra de stats, categorías por sector, indicador destacado con gráfico |
 | `/indicadores` | KPIs, filtros por categoría/período/región, grilla de indicadores con sparklines y búsqueda en vivo |
 | `/dashboard` | Resumen ejecutivo: KPIs, energía y capital humano por región, mapa de cobertura por regiones, evolución de la matriz energética, lista de indicadores destacados |
+
+## Autenticación (solo frontend)
+
+`src/lib/auth.tsx` implementa un `AuthProvider` con cuentas y sesión persistidas en `localStorage` (sin backend todavía):
+
+- **Primera vez**: el visitante ve el login y puede pulsar "Crea tu cuenta" → formulario con nombre, correo, contraseña y tipo de actor (empresa/gobierno/academia/emprendedor, alineado con el CU-03 de la documentación de arquitectura).
+- **Visitas siguientes**: si hay sesión guardada, entra directo a la app (sin flash de login).
+- El chip circular con las iniciales del usuario (arriba a la derecha del nav) abre un menú con "Cerrar sesión".
+- Este mecanismo es una simulación para la demo — cuando exista el backend (ver `docs/arquitectura/backend-spec.md` del repo de documentación), se reemplaza por `POST /api/auth/registro` y `/api/auth/login` reales, manteniendo la misma interfaz de `useAuth()`.
 
 ## Desarrollo
 
