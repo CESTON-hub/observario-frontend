@@ -3,12 +3,12 @@ import { AciemLogo } from "./AciemLogo";
 
 const columnas = [
   {
-    titulo: "Datos",
+    titulo: "Explorar",
     items: [
-      { label: "Indicadores", href: "/indicadores" },
-      { label: "Dashboard", href: "/dashboard" },
-      { label: "Metodología", href: "#" },
-      { label: "Descargar CSV", href: "#" },
+      { label: "Buscador de capacidades", href: "/buscar" },
+      { label: "Directorio (Dashboard)", href: "/dashboard" },
+      { label: "Convocatorias", href: "/convocatorias" },
+      { label: "Publicaciones", href: "/publicaciones" },
     ],
   },
   {
@@ -38,7 +38,7 @@ export function Footer() {
         <div className="max-w-xs space-y-4">
           <AciemLogo className="h-9 w-auto" />
           <p className="text-sm leading-6 text-navy/70">
-            Asociación Colombiana de Ingenieros. Observatorio de Datos de Ingeniería y Energía para Colombia.
+            Asociación Colombiana de Ingenieros. Observatorio del ecosistema de ingeniería de Colombia.
           </p>
           <p className="text-xs text-navy/40">© 2026 ACIEM Colombia. Todos los derechos reservados.</p>
         </div>

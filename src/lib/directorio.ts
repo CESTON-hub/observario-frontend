@@ -218,9 +218,9 @@ export const convocatorias: Convocatoria[] = [
 // Publicaciones y experiencias (CU-09, CU-10)
 
 export const boletines = [
-  { id: "b1", titulo: "Boletín I-2026 · Tránsito efectivo de proyectos de transmisión", periodo: "Marzo 2026", resumen: "El 68% de los proyectos del plan de expansión avanzó de licenciamiento a construcción dentro del plazo." },
-  { id: "b2", titulo: "Boletín II-2026 · Desviación de hitos en generación renovable", periodo: "Mayo 2026", resumen: "Los parques eólicos de La Guajira acumulan una desviación media de 8 meses por consultas previas." },
-  { id: "b3", titulo: "Boletín III-2026 · Costos y escenarios de la matriz energética", periodo: "Julio 2026", resumen: "Escenarios de participación renovable al 2030 bajo tres supuestos de demanda." },
+  { id: "b1", titulo: "Boletín I-2026 · Caracterización del sector de ingeniería electrónica", periodo: "Marzo 2026", resumen: "Bogotá y Medellín concentran el 62% de las empresas de electrónica registradas; predominan las pequeñas y medianas." },
+  { id: "b2", titulo: "Boletín II-2026 · Capacidades de laboratorio en universidades", periodo: "Mayo 2026", resumen: "El censo identificó 34 laboratorios con equipos disponibles para servicio o alquiler a la industria." },
+  { id: "b3", titulo: "Boletín III-2026 · Salud del portafolio de proyectos de ingeniería civil", periodo: "Julio 2026", resumen: "El 28% de los proyectos de infraestructura vial supera el umbral de desviación presupuestaria del 10%." },
 ];
 
 export type Experiencia = {

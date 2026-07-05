@@ -28,7 +28,6 @@ import {
 const principales = [
   { href: "/", label: "Inicio", icon: IconHome },
   { href: "/buscar", label: "Buscador", icon: IconSearch },
-  { href: "/indicadores", label: "Indicadores", icon: IconBarChart },
   { href: "/dashboard", label: "Dashboard", icon: IconGrid },
   { href: "/convocatorias", label: "Convocatorias", icon: IconMegaphone },
   { href: "/publicaciones", label: "Publicaciones", icon: IconBook },
@@ -37,6 +36,7 @@ const principales = [
 
 const gestion = [
   { href: "/registro", label: "Registrar organización", icon: IconBuilding },
+  { href: "/indicadores", label: "Salud del portafolio", icon: IconBarChart },
   { href: "/interdependencias", label: "Interdependencias", icon: IconShare },
   { href: "/escenarios", label: "Escenarios y decisiones", icon: IconCalculator },
   { href: "/admin/validacion", label: "Cola de validación", icon: IconCheckCircle },

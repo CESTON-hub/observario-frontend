@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Observatorio de Datos ACIEM",
   description:
-    "El Observatorio de ACIEM centraliza indicadores técnicos, estadísticas sectoriales y análisis sobre ingeniería, energía e infraestructura nacional.",
+    "El Observatorio de ACIEM caracteriza el ecosistema de ingeniería de Colombia: empresas, universidades, laboratorios, capacidades, líneas de investigación y proyectos.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
