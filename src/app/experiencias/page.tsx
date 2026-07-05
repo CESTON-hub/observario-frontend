@@ -34,10 +34,10 @@ export default function ExperienciasPage() {
           📊 Evalúa el avance de estos proyectos en el <span className="font-semibold text-aciem">Dashboard sectorial →</span>
         </Link>
         <Link
-          href="/indicadores?categoria=renovables"
+          href={`/indicadores?categoria=${encodeURIComponent("Energías Renovables")}`}
           className="rounded-2xl border border-aciem/20 bg-aciem/4 p-5 text-sm font-medium text-navy transition-colors hover:bg-aciem/8"
         >
-          ⚡ Mira los indicadores de energías renovables detrás de estas experiencias <span className="font-semibold text-aciem">→</span>
+          ⚡ Mira los indicadores de portafolio del sector de energías renovables <span className="font-semibold text-aciem">→</span>
         </Link>
       </div>
     </div>

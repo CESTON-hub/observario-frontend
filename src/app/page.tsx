@@ -68,7 +68,7 @@ export default function Home() {
           {categorias.map((c) => (
             <Link
               key={c.id}
-              href={`/indicadores?categoria=${c.id}`}
+              href={`/indicadores?categoria=${encodeURIComponent(c.nombre)}`}
               className="group rounded-2xl border border-black/6 bg-white p-6 shadow-[0_1px_2px_rgba(12,31,61,0.05)] transition-shadow hover:shadow-md"
             >
               <div className="flex items-start justify-between">
