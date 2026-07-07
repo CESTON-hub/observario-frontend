@@ -59,7 +59,7 @@ export function AuthScreen() {
 
       <div className="relative w-full max-w-[400px]">
         <div className="mb-8 flex flex-col items-center gap-3">
-          <AciemLogo className="h-11 w-auto" />
+          <AciemLogo className="h-20 w-auto" />
           <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-navy/50">
             Observatorio de Datos
           </span>
@@ -168,6 +168,7 @@ export function AuthScreen() {
             </>
           )}
         </p>
+        <p className="mt-6 text-center text-[11px] text-navy/30">Elaborado por Ceston</p>
       </div>
     </div>
   );

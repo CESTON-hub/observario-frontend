@@ -75,11 +75,11 @@ function ContenidoSidebar({ onNavegar }: { onNavegar?: () => void }) {
       if ((e.target as HTMLElement).closest("a")) onNavegar?.();
     }}>
       {/* Marca */}
-      <div className="flex items-center gap-2.5 border-b border-black/8 px-4 py-4">
-        <AciemLogo className="h-8 w-auto shrink-0" />
+      <div className="flex items-center gap-3 border-b border-black/8 px-4 py-5">
+        <AciemLogo className="h-16 w-auto shrink-0" />
         <div className="min-w-0 leading-tight">
-          <p className="truncate text-[13px] font-bold text-navy">Observatorio</p>
-          <p className="truncate text-[11px] text-navy/50">de Datos · ACIEM</p>
+          <p className="truncate text-base font-bold text-navy">Observatorio</p>
+          <p className="truncate text-xs text-navy/50">de Datos · ACIEM</p>
         </div>
       </div>
 
@@ -140,6 +140,8 @@ function ContenidoSidebar({ onNavegar }: { onNavegar?: () => void }) {
           </button>
         </div>
       )}
+
+      <p className="px-4 py-2.5 text-center text-[10px] text-navy/30">Elaborado por Ceston</p>
     </div>
   );
 }
@@ -159,10 +161,10 @@ export function Sidebar() {
   return (
     <>
       {/* Barra superior móvil */}
-      <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-black/8 bg-white/95 px-4 backdrop-blur md:hidden">
-        <Link href="/" className="flex items-center gap-2">
-          <AciemLogo className="h-7 w-auto" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-navy">Observatorio</span>
+      <header className="sticky top-0 z-40 flex h-[4.5rem] items-center justify-between border-b border-black/8 bg-white/95 px-4 backdrop-blur md:hidden">
+        <Link href="/" className="flex items-center gap-2.5">
+          <AciemLogo className="h-14 w-auto" />
+          <span className="text-xs font-bold uppercase tracking-[0.1em] text-navy">Observatorio</span>
         </Link>
         <button
           onClick={() => setMovilAbierto(true)}
